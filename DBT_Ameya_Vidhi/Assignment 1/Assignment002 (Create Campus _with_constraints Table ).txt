@@ -1,0 +1,141 @@
+Assignment 
+
+Feb20/ DBT/002
+Database Technologies
+Diploma in Advance Computing
+February 2020
+
+Task 1.
+
+1.	Create COURSE Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+name	varchar(45)
+duration	varchar(45)
+summery	varchar(1024)
+
+
+
+2.	Create STUDENT Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	Intprimary key
+namefirst	varchar(45)
+namelast	varchar(45)
+DOB	date
+emailID	varchar(128)
+
+
+3.	Create STUDENT_PHONE Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+studentID	int foreign key(studentid) references student(id)
+number	varchar(45)
+isActive	bool
+
+
+4.	Create STUDENT_ADDRESS Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+studentID	int uniquenotnullforeign key(studentid) references student(id)
+address	varchar(128)
+
+
+5.	Create FACULTY Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	Intprimary key
+namefirst	varchar(45)
+namelast	varchar(45)
+DOB	date
+emailID	varchar(128)
+
+
+
+
+6.	Create FACULTY_PHONE Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+facultyID	int foreign key(facultyid) references faculty(id)
+number	varchar(10)
+
+7.	Create FACULTY_ADDRESS Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+facultyID	int uniquenotnullforeign key(facultyid) references faculty(id)
+address	varchar(128)
+
+8.	Create MODULES Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+name	varchar(128)
+duration	int 
+
+9.	Create COURSE_MODULES Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+courseID	int foreign key (courseid) references course(id)
+moduleID	int foreign key (moduleid) references modules(id)
+
+10.	Create STUDENT_QUALIFICATIONS Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+studentID	int foreign key(studentid) references student(id) 
+name	varchar(128)
+college	varchar(128)
+university	varchar(128)
+marks	varchar(45)
+year	int 
+
+11.	Create FACULTY_QUALIFICATIONS Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+facultyID	int foreign key (facultyid) references faculty(id)
+name	varchar(128)
+college	varchar(128)
+university	varchar(128)
+marks	varchar(45)
+year	int 
+
+12.	Create COURSE_BATCHES Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+name	varchar(45)
+courseID	int foreign key (courseid) references course (id)
+starton	date 
+endson	date 
+capacity	int 
+
+13.	Create BATCH_STUDENTS Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+batchID	int foreign key (batchid) references course_batches (id)
+studentID	int foreign key (studentid) references student (id)
+
+14.	Create STUDENT_CARDS Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+studentID	int foreign key(studentid) references student(id)
+name	varchar(45)
+isActive	bool
+
+15.	Create STUDENT_ORDER  Relation with following columns using Workbench.
+
+Field Name	Datatype (size)
+ID	int primary key
+studentID	int foreign key(studentid) references student(id)
+date	date
+amount	int
+
